@@ -1,0 +1,23 @@
+services:
+  hindsight:
+    image: ghcr.io/vectorize-io/hindsight:latest
+    ports:
+      - "8888:8888"
+    environment:
+      - HINDSIGHT_API_WORKER_ID=mirrorline-local
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    environment:
+      - HINDSIGHT_URL=http://hindsight:8888
+      - HINDSIGHT_BANK_ID=mirrorline-demo
+      - CORS_ORIGINS=http://localhost:5173
+    depends_on:
+      - hindsight
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend

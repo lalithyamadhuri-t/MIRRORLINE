@@ -1,0 +1,100 @@
+* { box-sizing: border-box; }
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #e8eef7;
+  background: #07111f;
+  font-synthesis: none;
+}
+body { margin: 0; min-width: 1100px; background: #07111f; }
+button, textarea { font: inherit; }
+button { cursor: pointer; }
+
+.app { min-height: 100vh; display: flex; background:
+  radial-gradient(circle at 70% 0%, rgba(63, 122, 255, .13), transparent 32rem),
+  #07111f;
+}
+.sidebar {
+  width: 255px; position: fixed; inset: 0 auto 0 0; padding: 28px 18px;
+  border-right: 1px solid #18283b; background: rgba(5, 13, 24, .92);
+}
+.brand { display: flex; gap: 12px; align-items: center; padding: 4px 8px 32px; }
+.logo { width: 38px; height: 38px; border: 1px solid #527cff; display: grid; place-items: center; border-radius: 10px; font-weight: 800; color: #8facff; }
+.brand h1 { margin: 0; font-size: 15px; letter-spacing: .12em; }
+.brand span { color: #6f829b; font-size: 10px; }
+nav { display: grid; gap: 5px; }
+nav a { padding: 11px 12px; border-radius: 8px; color: #7e91aa; font-size: 13px; }
+nav a.active, nav a:hover { color: #eaf0ff; background: #101e31; }
+.side-note { position: absolute; left: 18px; right: 18px; bottom: 24px; padding: 14px; border: 1px solid #18283b; border-radius: 10px; background: #0a1626; }
+.side-note strong { font-size: 9px; letter-spacing: .15em; color: #7898ff; }
+.side-note p { margin: 7px 0 0; color: #7588a2; font-size: 11px; line-height: 1.5; }
+
+.main { margin-left: 255px; width: calc(100% - 255px); padding: 34px 42px 70px; max-width: 1450px; }
+.topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; }
+.eyebrow { color: #6f8eff; font-size: 9px; font-weight: 800; letter-spacing: .18em; }
+.topbar h2 { margin: 7px 0 0; font-size: 26px; letter-spacing: -.03em; }
+.demo-btn, .primary { border: 0; border-radius: 8px; padding: 11px 16px; color: white; background: #315cff; font-weight: 700; }
+.demo-btn:disabled { opacity: .6; }
+
+.hero { min-height: 245px; border: 1px solid #20334a; border-radius: 15px; padding: 32px; display: flex; align-items: center; justify-content: space-between; background: linear-gradient(120deg, #0b1a2d, #0a1423); overflow: hidden; }
+.hero-kicker { color: #6f8eff; font-size: 10px; font-weight: 800; letter-spacing: .2em; }
+.hero h3 { font-size: 48px; margin: 12px 0 8px; letter-spacing: -.05em; }
+.hero p { max-width: 650px; color: #8799b1; line-height: 1.7; font-size: 14px; }
+.hero-orbit { width: 190px; height: 190px; border: 1px solid #263e5c; border-radius: 50%; display: grid; place-items: center; position: relative; color: #7d9cff; font-size: 9px; letter-spacing: .15em; }
+.hero-orbit span:nth-child(1) { position: absolute; top: 19px; }
+.hero-orbit span:nth-child(2) { position: absolute; right: -18px; }
+.hero-orbit span:nth-child(3) { position: absolute; bottom: 20px; }
+
+.metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 14px 0; }
+.metric { border: 1px solid #182b41; background: #0b1727; padding: 18px; border-radius: 10px; }
+.metric span { color: #72859f; font-size: 10px; display: block; }
+.metric strong { font-size: 28px; display: block; margin-top: 8px; }
+
+.grid { display: grid; grid-template-columns: 1.6fr 1fr; gap: 14px; margin-top: 14px; }
+.panel { border: 1px solid #182b41; background: #0a1626; border-radius: 12px; padding: 22px; }
+.panel.wide { min-height: 260px; }
+.panel h3 { margin: 6px 0 18px; font-size: 17px; }
+.panel-head { display: flex; justify-content: space-between; }
+.belief { display: flex; justify-content: space-between; gap: 18px; padding: 17px 0; border-top: 1px solid #17283b; align-items: center; }
+.belief-main { min-width: 0; }
+.belief-id { font-size: 9px; color: #60748f; letter-spacing: .08em; margin-bottom: 7px; }
+.belief strong { font-size: 13px; line-height: 1.5; display: block; }
+.belief button { background: transparent; color: #8ba6ff; border: 1px solid #294277; padding: 8px 10px; border-radius: 7px; font-size: 10px; font-weight: 700; white-space: nowrap; }
+.chips { display: flex; gap: 10px; margin-top: 9px; color: #60758f; font-size: 10px; }
+.chip { color: #8fa7ff; }
+
+.activity { display: flex; gap: 10px; padding: 12px 0; border-bottom: 1px solid #17283b; }
+.activity > span { color: #58d39b; }
+.activity strong { display: block; font-size: 10px; letter-spacing: .08em; }
+.activity small { color: #6d8099; font-size: 10px; }
+.empty, .muted { color: #62758f; padding: 25px 0; }
+.empty span { font-size: 25px; }
+.empty p { margin: 7px 0 2px; color: #9aabc0; }
+
+.status { display: inline-block; color: #87a3ff; border: 1px solid #2c4373; border-radius: 20px; padding: 5px 9px; font-size: 9px; letter-spacing: .12em; font-weight: 800; }
+.old-belief { color: #b2bfd0; line-height: 1.6; }
+.evidence-row { display: flex; gap: 10px; margin: 17px 0; }
+.evidence-row div { flex: 1; background: #0d1c2e; padding: 12px; border-radius: 8px; }
+.evidence-row span { font-size: 22px; display: block; }
+.evidence-row small { color: #71849d; font-size: 9px; }
+.validation h4 { color: #6f8eff; font-size: 9px; letter-spacing: .12em; margin-bottom: 6px; }
+.validation p { color: #8194ad; font-size: 12px; line-height: 1.6; }
+.revision { margin-top: 16px; padding: 14px; border-left: 2px solid #527cff; background: #0d1c2e; }
+.revision strong { display: block; margin-top: 8px; font-size: 12px; line-height: 1.6; }
+
+textarea { width: 100%; min-height: 105px; resize: vertical; background: #071321; border: 1px solid #1d324a; color: #dbe5f4; border-radius: 8px; padding: 12px; outline: none; }
+textarea:focus { border-color: #486dff; }
+.primary { margin-top: 10px; width: 100%; }
+.analysis { margin-top: 15px; padding: 14px; background: #0d1c2e; border-radius: 8px; }
+.analysis p { color: #91a3ba; font-size: 12px; line-height: 1.6; }
+.analysis small { color: #60758f; }
+.error { margin-bottom: 14px; padding: 11px 14px; background: #2a1418; border: 1px solid #66313a; color: #ff9ca8; border-radius: 8px; font-size: 12px; }
+footer { color: #435a75; font-size: 10px; text-align: center; padding-top: 30px; letter-spacing: .08em; }
+
+@media (max-width: 1100px) {
+  body { min-width: 0; }
+  .sidebar { display: none; }
+  .main { margin-left: 0; width: 100%; padding: 22px; }
+  .grid, .metrics { grid-template-columns: 1fr; }
+  .hero-orbit { display: none; }
+  .hero h3 { font-size: 36px; }
+}
